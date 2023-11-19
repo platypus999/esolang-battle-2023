@@ -103,6 +103,9 @@ export default class App extends React.Component {
 		if (['mayfes2021-day1', 'mayfes2021-practice1', 'komabasai2022', 'komabasai2022-practice'].includes(this.contestId)) {
 			return [0, 4, 5, 9, 10, 14, 15, 19, 20, 24].includes(cell);
 		}
+		if (['komabasai2023', 'komabasai2023-practice'].includes(this.contestId)) {
+			return [0, 1, 2, 3, 4, 15, 19, 20, 21, 22, 23, 24].includes(cell);
+		}
 		return false;
 	};
 

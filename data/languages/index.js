@@ -9,6 +9,7 @@ const komabasai2018Day1 = require('./komabasai2018-day1');
 const komabasai2018Day2 = require('./komabasai2018-day2');
 const komabasai2019 = require('./komabasai2019');
 const komabasai2022 = require('./komabasai2022');
+const komabasai2023 = require('./komabasai2023');
 const mayfes2018Day1 = require('./mayfes2018-day1');
 const mayfes2018Day2 = require('./mayfes2018-day2');
 const mayfes2019Day1 = require('./mayfes2019-day1');
@@ -42,4 +43,5 @@ module.exports = {
 	'mayfes2021-practice2': mayfes2021Day2,
 	'komabasai2022-practice': komabasai2022,
 	komabasai2022,
+	komabasai2023,
 };
