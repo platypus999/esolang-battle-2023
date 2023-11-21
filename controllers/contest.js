@@ -1,6 +1,7 @@
 const qs = require('querystring');
 const classnames = require('classnames');
 const MarkdownIt = require('markdown-it');
+const mathjax3 = require('markdown-it-mathjax3');
 const {getLanguageMap} = require('../controllers/utils');
 const Contest = require('../models/Contest');
 const User = require('../models/User');
@@ -37,6 +38,7 @@ module.exports.index = async (req, res) => {
 
 module.exports.rule = (req, res) => {
 	const markdown = new MarkdownIt();
+	markdown.use(mathjax3);
 	res.render('rule', {
 		contest: req.contest,
 		title: 'Rule',
