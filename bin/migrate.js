@@ -99,11 +99,13 @@ $i$ 行目には、\`x\` と \`+\` で構成される $N = 20$ 文字の文字�
 ### 入力形式
 
 ---
+
 $S_1$
 
 $\\vdots$
 
 $S_T$
+
 ---
 
 # 出力
@@ -251,7 +253,7 @@ xxxxxxxxx+xxxxxxxxx+xxxxxxxxx+xxxxxxxxx+xxxxxxxxx+xxxxxxxxx+xxxxxxxxx+xxxxxxxxx+
 xxxxxxx+xxxxxxx+xxxxxxx+xxxxxxx+xxxxxxx+xxxxxxx+xxxxxxx+xxxxxxx+xxxxx+xxxxx+xxxxx+xxxxx+xxxxx+xxxxx+xxx+xxx+xxx+xxx
 \`\`\`
 
-この入出力例は**満たしている**ことに注意してください。従って、この入力例はジャッジに使われるテストケースに**含まれています**。
+この入出力例は制約を**満たしている**ことに注意してください。従って、この入力例はジャッジに使われるテストケースに**含まれています**。
 				`,
 				en: '',
 			},
