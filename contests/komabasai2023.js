@@ -103,7 +103,7 @@ module.exports.generateInput = () => {
 	// sample 50 elements from validInputs
 	const lines = validInputs.sort(() => 0.5 - Math.random()).slice(0, 50);
 
-	return lines;
+	return `${lines.join('\n')}\n`;
 };
 
 module.exports.isValidAnswer = (input, output) => {
