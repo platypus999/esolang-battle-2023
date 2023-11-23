@@ -979,7 +979,7 @@
   },
   {
     "slug": "php",
-    "name": "PHP 7.4",
+    "name": "PHP 8.1",
     "link": "https://secure.php.net/",
     "disasm": false
   },
