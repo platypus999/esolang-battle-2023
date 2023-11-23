@@ -11,14 +11,14 @@ const languages = [
 ];
 
 module.exports = flatten(languages).map((language, index) => {
-	if (index === 6 || index === 18) {
+	if (index === 8 || index === 16) {
 		return {
 			type: 'base',
 			team: 0,
 		};
 	}
 
-	if (index === 8 || index === 16) {
+	if (index === 6 || index === 18) {
 		return {
 			type: 'base',
 			team: 1,
