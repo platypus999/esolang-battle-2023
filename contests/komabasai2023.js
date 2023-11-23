@@ -110,7 +110,7 @@ module.exports.isValidAnswer = (input, output) => {
 	const testCases = input.trim().split('\n');
 	const expectedOutputs = testCases.map((line) => line.split('+').map((xs) => Array(xs.length).fill(xs.length - 1)).flat());
 	const filteredOutputs = output.replace(/[^+x\n]/g, '').trim().split('\n');
-	const normalize = (polyString) => polyString.split('+').map((xs) => (xs.length > 0 && (/^[x]+$/g).test(xs)) ? xs.length : -1).sort().reverse();
+	const normalize = (polyString) => polyString.split('+').map((xs) => (xs.length > 0 && (/^[x]+$/g).test(xs)) ? xs.length : -1).sort((a,b)=>b-a);
 	const normalizedOutputs = filteredOutputs.map(normalize);
 	return JSON.stringify(expectedOutputs) === JSON.stringify(normalizedOutputs);
 };
