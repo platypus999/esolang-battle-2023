@@ -38,5 +38,6 @@ module.exports = {
 	'mayfes2021-practice2': mayfes2021Practice2,
 	'komabasai2022-practice': mayfes2021Practice1,
 	komabasai2022,
+	'komabasai2023-practice': komabasai2023,
 	komabasai2023,
 };
