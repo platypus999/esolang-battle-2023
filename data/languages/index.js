@@ -44,4 +44,5 @@ module.exports = {
 	'komabasai2022-practice': komabasai2022,
 	komabasai2022,
 	komabasai2023,
+	'komabasai2023-practice': komabasai2023,
 };
