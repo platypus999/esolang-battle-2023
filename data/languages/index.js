@@ -18,6 +18,7 @@ const mayfes2020Day2 = require('./mayfes2020-day2');
 const mayfes2021Day1 = require('./mayfes2021-day1');
 const mayfes2021Day2 = require('./mayfes2021-day2');
 const mayfes2021Practice1 = require('./mayfes2021-practice1');
+const mayfes2024 = require('./mayfes2024.js');
 
 module.exports = {
 	1: languages1,
@@ -42,4 +43,6 @@ module.exports = {
 	'mayfes2021-practice2': mayfes2021Day2,
 	'komabasai2022-practice': komabasai2022,
 	komabasai2022,
+	mayfes2024,
+	'mayfes2024-practice': mayfes2024,
 };
