@@ -13,7 +13,7 @@ mongoose.Promise = global.Promise;
 
 	await User.updateMany({admin: true}, {$set: {admin: false}});
 
-	for (const id of ['sitositositoo', 'u6606u5e03', 'n4o847', 'hideo54', 'kuromunori', 'ishitatsuyuki', 'hakatashi', 'syobon_hinata']) {
+	for (const id of ['sitositositoo', 'u6606u5e03', 'n4o847', 'hideo54', 'kuromunori', 'ishitatsuyuki', 'hakatashi', 'syobon_hinata', 'platypus999', 'naan4UGen', 'satos---jp', ]) {
 		const user = await User.findOne({email: `${id}@twitter.com`});
 		if (user) {
 			user.admin = true;
@@ -22,45 +22,31 @@ mongoose.Promise = global.Promise;
 	}
 
 	await Contest.updateOne(
-		{id: 'komabasai2022-practice'},
+		{id: 'mayfes2024-practice'},
 		{
-			name: '駒場祭2022 Practice Contest',
-			id: 'komabasai2022-practice',
-			start: new Date('2022-11-18T00:00:00+0900'),
-			end: new Date('2022-11-20T00:00:00+0900'),
+			name: '五月祭2024 (practice)',
+			id: 'mayfes2024-practice',
+			start: new Date('2022-11-19T13:03:00+0900'),
+			end: new Date('2024-12-31T00:00:00+0900'),
 			description: {
 				ja: stripIndent`
 				\`\`\`
-				大文字か小文字かを判定せよ。
+				T 一文字を出力せよ。
 				\`\`\`
 				## 入力
-				* ラテン文字 A から Z の 26 文字が順番に、一行で与えられる。
-				* 各文字は大文字あるいは小文字である。
-				* 入力の最後には改行が付与される。
+				* この問題に入力は存在しません。
 				## 出力
-				* 与えられた文字それぞれについて、大文字であれば \`1\` を、小文字であれば \`0\` を出力せよ。
-				* 出力された文字列に含まれる空白文字（改行含む）は無視される。
+				* \`T\` という一文字を出力しなさい。ただし、以下の条件を満たす文字列ならば同じく正解文字列とみなす。
+				- 英大文字・小文字の区別は付けない。\`t\` も正解文字列として扱われる。
+				- 英大文字・小文字以外の文字は全て無視される。例えば \`12T34\` や \`  ^  T     @   \` などは正解文字列として扱われる。
 				## 制約
-				* 入力には必ず大文字がひとつ以上、小文字がひとつ以上含まれる。
+				* 出力に関する制約は存在しない。ただし、ジャッジの AC 判定は以下のルールに従うので注意すること。
+				- プログラムが異常終了した場合、それまでに標準出力から出力された文字列を判定にかける。その結果が正解文字列の場合は AC として扱われる。
+				- プログラムが時間制限までに実行し終わらなかった場合、TLE として扱われる。たとえそれまでに正解文字列を出力できていたとしても AC にはならない。
 				## お知らせ
-				今回はライブコードゴルフ完全初心者同士の対決なので、初心者に不親切な言語の資料と、ヒントを用意しました。
-				適宜活用してください。
-				### 言語
-				* Emoji：[https://github.com/n4o847/esolangs/wiki/Emoji](https://github.com/n4o847/esolangs/wiki/Emoji)
-				* PPAP：[https://github.com/n4o847/esolangs/wiki/PPAP](https://github.com/n4o847/esolangs/wiki/PPAP)
-				* \`><>\`：[https://github.com/n4o847/esolangs/wiki/Fish](https://github.com/n4o847/esolangs/wiki/Fish)
-				* Brainfuck：[https://github.com/n4o847/esolangs/wiki/Brainfuck](https://github.com/n4o847/esolangs/wiki/Brainfuck)
+				WIP (資料を貼る予定)
 				### ヒント
-				* ライブコードゴルフは早く出すことが正義で、そして一般にesoによるループは難しいです。愚直に26回書くことも検討してみては？
-				## 入出力例
-				### 入力
-				\`\`\`
-				ABCdefghiJKLmnopqRSTUvwxYz
-				\`\`\`
-				### 出力
-				\`\`\`
-				11100000011100000111100010
-				\`\`\`
+				- 練習サーバーのため、すべての言語が提出できるようになっていますが、本番では自分の陣地に隣接している言語のみに提出可能なので注意してください。
 				`,
 				en: '',
 			},
@@ -69,87 +55,15 @@ mongoose.Promise = global.Promise;
 	);
 
 	await Contest.updateOne(
-		{id: 'komabasai2022'},
+		{id: 'mayfes2024'},
 		{
-			name: '[TSG LIVE! 9] Live CodeGolf Contest',
-			id: 'komabasai2022',
-			start: new Date('2022-11-19T13:03:00+0900'),
-			end: new Date('2022-11-19T14:33:00+0900'),
+			name: '[TSG LIVE! 12] Live CodeGolf Contest',
+			id: 'mayfes2024',
+			start: new Date('2024-05-19T13:03:00+0900'),
+			end: new Date('2024-05-19T14:33:00+0900'),
 			description: {
 				ja: stripIndent`
-					\`\`\`
-					ドミノ倒しで倒れるドミノの数を数えよ。
-					\`\`\`
-
-					# 入力
-
-					入力は30行からなる。
-
-					入力の各行は、\`|\`か\`_\`を10文字並べた文字列である。
-
-					各行（最終行を含む）の末尾には、改行（\`\\n\`）が付与される。
-
-					各行の$n$文字目は点$n-1$に対応する。\`|\`はドミノが存在する点を、\`_\`はドミノが存在しない点を意味する。
-
-					ドミノの高さは2.5、各点の間隔は1であり、ドミノの厚みは無視できるものとする。
-
-					# 出力
-
-					点0のドミノを点1の方向に倒したときに、倒れるドミノの個数を各行ごとに出力せよ。出力は空白(改行含む)で区切ること。
-
-					ただし、ここでいう「空白」は、JavaScriptの正規表現で\`\\s\`にマッチする文字のことを指す。
-
-					# 制約
-
-					点0にドミノが存在することは保証されている。
-
-					# 入力例
-
-					\`\`\`
-					|___|_|_|_
-					||||_|__|_
-					|____|_||_
-					||||___|||
-					|||___||||
-					|||_|_|___
-					|__|_||___
-					|_||______
-					|_|||__||_
-					|_|_|||___
-					|__||__||_
-					|___||||_|
-					|||_|_||__
-					|___|||_||
-					|_____|_||
-					|____|||||
-					||__||||||
-					|||_||__|_
-					|_||||||__
-					||_||__|||
-					|_|||_|___
-					||_|__|||_
-					|__|__||||
-					|||__|||__
-					|||||_|||_
-					|___|_||_|
-					|||||__|||
-					|__|_____|
-					||__||__||
-					||||||_|||
-					\`\`\`
-
-					# 出力例
-
-					\`\`\`
-					1 5 1 4 3
-					5 1 3 4 5
-					1 1 6 1 1
-					1 2 5 7 4
-					5 3 1 3 8
-					1 5 1 2 9
-					\`\`\`
-
-					たとえば2行目の\`||||_|__|_\`の場合、点0,1,2,3,5の合計5つのドミノが倒れる。
+					本番で使う問題用ですよ
 				`,
 				en: '',
 			},
