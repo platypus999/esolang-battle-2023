@@ -5,4 +5,4 @@ block content
     .page-header
       h3 Profile Information
 
-    p= `You are ${user.name()}, I know :)`
+    p= `You are ${user.name()}${user.admin ? ' (admin)' : ''}, I know :)`
