@@ -36,6 +36,11 @@ module.exports.index = async (req, res) => {
 };
 
 module.exports.rule = (req, res) => {
+	if (!(req.contest.isOpen() || (req.query.user && req.query.user.admin))) {
+		res.redirect(`/contests/${req.contest.id}`);
+		return;
+	}
+
 	const markdown = new MarkdownIt();
 	res.render('rule', {
 		contest: req.contest,
@@ -79,7 +84,7 @@ module.exports.getAdmin = async (req, res) => {
  * GET /contest/:contest/check
  */
 module.exports.getCheck = async (req, res) => {
-	if (!req.contest.isOpen()) {
+	if (!(req.contest.isOpen() || (req.query.user &&  req.query.user.admin))) {
 		res.redirect(`/contests/${req.contest.id}`);
 		return;
 	}
