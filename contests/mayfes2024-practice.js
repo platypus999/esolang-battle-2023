@@ -21,6 +21,6 @@ module.exports.generateInput = () => {
 };
 
 module.exports.isValidAnswer = (input, output) => {
-	const outArray = [...output].filter((c) => c.match(/^[A-Za-z]$/)).map((c) => c.toUpperCase());
+	const outArray = [...output.toString()].filter((c) => c.match(/^[A-Za-z]$/)).map((c) => c.toUpperCase());
 	return ["T"].toString() === outArray.toString();
 };
