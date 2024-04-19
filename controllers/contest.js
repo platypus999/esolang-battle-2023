@@ -1,6 +1,8 @@
 const qs = require('querystring');
 const classnames = require('classnames');
 const MarkdownIt = require('markdown-it');
+const MarkdownItTexMath = require('markdown-it-texmath');
+const KaTeX = require('katex');
 const {getLanguageMap} = require('../controllers/utils');
 const Contest = require('../models/Contest');
 const User = require('../models/User');
@@ -41,7 +43,7 @@ module.exports.rule = (req, res) => {
 		return;
 	}
 
-	const markdown = new MarkdownIt();
+	const markdown = new MarkdownIt().use(MarkdownItTexMath, {engine: KaTeX, delimiters: 'dollars'});
 	res.render('rule', {
 		contest: req.contest,
 		title: 'Rule',
