@@ -21,7 +21,7 @@ html, body, #app {
 		display: flex;
 		flex-direction: column;
 		width: 90vmin;
-		height: 70vmin;
+		height: 65vmin;
 		transform: scale(0.9);
 		margin: 0 0;
 
@@ -57,26 +57,34 @@ html, body, #app {
 
 			&.black polygon {
 				fill: #111111;
+				stroke: #111111;
 			}
 			&.grey polygon {
 				fill: #555555;
+				stroke: #555555;
 			}
 			&.white polygon {
 				fill: #ffffff;
+				stroke: #ffffff;
 			}
 			&.red polygon {
 				fill: #ef2011;
+				stroke: #ef2011;
 			}
 			&.blue polygon {
 				fill: #0e30ec;
+				stroke: #0e30ec;
 			}
 			&.green polygon {
 				fill: #167516;
+				stroke: #167516;
 			}
 
 			.hexagon {
 				overflow: visible;
-				transform: scale(1.1);
+				transform: scale(0.9);
+				stroke-width: 0.04vmin;
+				stroke-linejoin: round;
 
 				polygon {
 					cursor: pointer;
@@ -98,7 +106,7 @@ html, body, #app {
 			width: 200px;
 
 			line-height: 0.9rem;
-			font-size: 1.3vmin;
+			font-size: 2.5vmin;
 			font-weight: bold;
 			text-align: center;
 			word-break: break-word;
