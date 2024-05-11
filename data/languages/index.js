@@ -45,4 +45,5 @@ module.exports = {
 	komabasai2022,
 	mayfes2024,
 	'mayfes2024-practice': mayfes2024,
+	'mayfes2024-practice2': mayfes2024,
 };
